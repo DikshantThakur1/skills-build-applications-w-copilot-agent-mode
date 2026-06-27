@@ -18,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 app.use(router);
 
+app.set('trust proxy', true);
+
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', service: 'octofit-backend', baseUrl });
 });

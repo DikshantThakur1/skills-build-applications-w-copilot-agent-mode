@@ -19,6 +19,7 @@ const baseUrl = codespaceName
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(routes_1.default);
+app.set('trust proxy', true);
 app.get('/api/health', (_req, res) => {
     res.json({ status: 'ok', service: 'octofit-backend', baseUrl });
 });
